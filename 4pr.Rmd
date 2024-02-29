@@ -1,0 +1,20 @@
+---
+title: "4praktika"
+author: "Povilas Kepežinskas"
+date: "2024-02-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Padaryta 7 uzduotis, sujungti failai pagal 6uzd ir sutraukta pagal kintamuosius 
+```{r}
+setwd("D:/R/4praktika")
+data1 = read.csv("data6089.csv")
+data2 = read.csv("data9013.csv")
+data = rbind(data1, data2)
+data3 = read.csv("datapol.csv")
+data_pol = merge(data, data3, by.x = c("year", "country"), by.y = c("year", "country"))
+data_pol
+```
